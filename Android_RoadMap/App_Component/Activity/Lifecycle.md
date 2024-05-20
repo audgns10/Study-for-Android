@@ -9,7 +9,7 @@
   * onPause()
   * onStop()
   * onDestroy()
-  * 
+
 <br>
 
 * * *
