@@ -50,3 +50,8 @@
 <br>
 
 6. onDestroy() -> **import** : 만약 onDestroy()가 호출되기 까지 해제되지 않은 리소스가 있다면, 모두 여기서 해제(Memory Leak 발생 위험 상승)
+    * activity가 완전히 소멸되기 전에 호출
+    * finish()가 호출되거나 사용자가 앱을 종료하여 activity가 종료되는 경우
+    * 화면 구성이 변경되어 일시적으로 액티비티를 소멸
+    * activity가 종료되는 경우 onDestroy()가 마지막 Lifecycle 콜백 메소드
+    * 2번째의 사유로 호출이 되었다면, 시스템이 즉시 새롭게 변경된 activity 인스턴스를 생성하여 onCreate() 호출
