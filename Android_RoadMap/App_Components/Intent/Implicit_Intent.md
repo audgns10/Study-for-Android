@@ -10,6 +10,8 @@
 
 * * *
 
+<br>
+
 * 안드로이드 개발에서 암시적 인텐트(Implicit Intents)는 명시적 인텐트(Explicit Intents)와 달리 타겟 컴포넌트를 명확하게 지정하지 않는다
 * intent 설명에 맞는 적절한 컴포넌트를 시스템이 찾아서 요청을 처리하도록 한다
 * 시스템은 모든 설치된 앱의 AndroidManifest.xml 파일에 있는 <intent-filter> 섹션을 암시적 인텐트와 비교하여 이 인텐트를 처리할 수 있는 액티비티를 찾는다
