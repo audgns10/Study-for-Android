@@ -1,0 +1,39 @@
+# Compose 성능 최적화를 위한 Stability 마스터(엄재웅)
+
+Stability
+
+stable
+원시 타입
+람다식으로 표현되는 함수의 유형
+class의 public 프로퍼티가 모두 불변이거나 stable한 경우
+@Stable, @Immmutable 어노테이션
+
+unstable
+구현체를 예측할 수 없는  any, list map 등을 펴함한 모든 인ㅇ터페이스
+class public 프로터티가 최소 하나 이상이 가변적이거나 unstable한 경우
+
+smart recomposition
+
+inferring composable functions
+restartable -> 대부분의 composable 함수는 restartble하고 멱등성의 성질을 지님
+
+skippable -> Composable 함수가 stable한 배개변수만으로 구성된 경우, recomposition을 생략할 수 이ㅣㅆ는 skippabled로 분류
+
+**compose compiler metrics**
+
+stability annotaions
+@immutable
+모든 public 프로퍼티에 대하여 val keyword를 사용하여 불변임을 확인
+커스텀 setter 사용을 피하고, 모든 public 프로퍼티
+비즈니스 로직으로 부터 받은 응답이 절대 변경이 안됨
+
+@stable
+위의 어노테이션 보다는 조금 느슨한 약속을 의미
+문맥적으로 안정적이라는 용어는 함수가 동일한 입력값에 대해 일관
+불변이지만 값이 변할 수는 있음
+
+@NoRestartablecomposable
+함수에 사용할 경우 Restartable 속성을 부야하지 않고 recomposstion
+표준함수에서 사용하는 것이 가장 적합
+
+compose stable marker
